@@ -14,6 +14,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: calc(0px - 1.5rem - 6px);
+}
+.profile img {
+  box-sizing: initial;
+  width: 3rem;
+  height: 3rem;
+  border-radius:8px;
+  border: 4px solid transparent;
+  outline: 2px solid #6FFFE9;
 }
 
 .sidebar footer {
@@ -24,8 +33,8 @@
 
 .sidebar footer a {
   width: 100%;
-  background: #6FFFE9;
-  color: #0B132B;
+  background: transparent ;
+  color: #6FFFE9;
   border: 1px solid #6FFFE9;
   border-radius: 8px;
   height: 50px;
@@ -37,4 +46,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 0.5rem;
+  transition: 0.1s, background-color 0.1s;
 }
+.sidebar footer a:hover {
+  background: #6FFFE9;
+  color: #3A506B;
+}
+
+.profile strong {
+  margin-top: 1rem;
+  color: #6FFFE9;
+  line-height: 1.6rem;
+}
+.profile span {
+  color: #6FFFE9;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-style: normal;
+  line-height: 1.6rem;
+}
+
+
