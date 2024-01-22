@@ -1,0 +1,11 @@
+.post {
+  width: 52rem;
+  border-radius: 0.5rem;
+  background: #3A506B;
+  height: 38.8125rem;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 3.125rem;
+}
