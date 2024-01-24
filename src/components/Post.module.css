@@ -126,3 +126,7 @@
 .commentForm button:hover {
   background: #ffeb85;
 }
+
+.commentList {
+  margin-top: 2rem;
+}
