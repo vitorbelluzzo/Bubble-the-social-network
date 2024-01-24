@@ -11,19 +11,30 @@ export function Post() {
           </div>
         </div>
         <time title='20 de Janeiro às 20:30' dateTime='2024-01-22 20:30'>Publicado há 1h</time>
-        </header>
+      </header>
 
-        <div className={styles.content}>
+      <div className={styles.content}>
 
-          <p> Fala galeraaa 👋</p>
-          <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-          <p>👉<a href=""> jane.design/doctorcare</a></p>
-          <p>
-            <a href="">#novoprojeto</a>
-            <a href=""> #nlw</a>
-            <a href=""> #rocketseat</a></p>
-        </div>
-      
+        <p> Fala galeraaa 👋</p>
+        <p>Estou animado por fazer parte desta comunidade inovadora. Vamos juntos explorar as possibilidades e construir conexões incríveis! 🚀</p>
+        <p>👉<a href=""> vitorbelluzzo/bubble</a></p>
+        <p>
+          <a href="">#novoprojeto</a>
+          <a href=""> #bubble</a>
+          <a href=""> #socialmedia</a></p>
+      </div>
+      <form className={styles.commentForm} >
+        <strong>Deixe seu feedback</strong>
+        <textarea
+          placeholder="O que você achou do projeto?"
+        />
+        <footer>
+          <button type='submit'>Comentar</button>
+        </footer>
+      </form>
+
+
+
     </article>
   )
 
