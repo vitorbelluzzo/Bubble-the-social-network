@@ -4,6 +4,12 @@ import { Avatar } from "./Avatar";
 import styles from "./Post.module.css";
 import { Comment } from "./comment";
 
+const comments = [
+  1,
+  2,
+  3,
+];
+
 export function Post({ author, content, publishedAt }) {
   const publishedDateFormatted = format(
     publishedAt,
