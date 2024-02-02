@@ -5,20 +5,18 @@ import styles from "./app.module.css";
 import "./global.css";
 
 const posts = [
-  
   {
     id: 1,
     author: {
-      avatarUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpeloteros.com.ec%2Fsitioweb%2Fwp-content%2Fuploads%2F2022%2F01%2FIMG_20220104_163441.jpg&f=1&nofb=1&ipt=4cf02b7bfdfea521263d13062308b858c54413e134ce14c4247fb3992b04193c&ipo=images",
+      avatarUrl:
+        "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpeloteros.com.ec%2Fsitioweb%2Fwp-content%2Fuploads%2F2022%2F01%2FIMG_20220104_163441.jpg&f=1&nofb=1&ipt=4cf02b7bfdfea521263d13062308b858c54413e134ce14c4247fb3992b04193c&ipo=images",
       name: "Robert Arboleda",
       role: "Zagueiro @SãoPauloFC",
     },
     content: [
       { type: "paragraph", content: "Fala galeraaa 👋" },
       {
-        type: "paragraph",
-        content:
-          "Estou animado por fazer parte desta comunidade inovadora. Vamos juntos explorar as possibilidades e construir conexões incríveis! 🚀",
+        type: "paragraph", content: "Estou animado por fazer parte desta comunidade inovadora. Vamos juntos explorar as possibilidades e construir conexões incríveis! 🚀",
       },
       { type: "link", content: "vitorbelluzzo/bubble" },
     ],
@@ -42,6 +40,7 @@ const posts = [
     ],
     publishedAt: new Date("2024-01-19 20:00:00"),
   },
+  
 ];
 
 export function App() {
@@ -52,14 +51,14 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          {posts.map(post => {
+          {posts.map((post) => {
             return (
               <Post
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
               />
-            )
+            );
           })}
         </main>
       </div>
