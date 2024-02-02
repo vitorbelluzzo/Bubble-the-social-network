@@ -7,16 +7,12 @@ import { useState } from "react";
 
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Post Muito bacana, parabéns!"]);
-
   const [newCommentText, setNewCommentText] = useState("");
-  
-
   const publishedDateFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
     { locale: ptBR }
   );
-
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
     addSuffix: true,
@@ -31,6 +27,10 @@ export function Post({ author, content, publishedAt }) {
 
   function HandleNewCommentChange() {
     setNewCommentText(event.target.value);
+  }
+
+  function deleteComment(comment) {
+    console.log(`Deletar comentário ${comment}`);
   }
 
   return (
@@ -81,7 +81,13 @@ export function Post({ author, content, publishedAt }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment key={comment} content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              deleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
