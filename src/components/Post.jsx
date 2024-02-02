@@ -8,7 +8,8 @@ import { useState } from "react";
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Post Muito bacana, parabéns!"]);
 
-  const [newCommentText, setNewCommentText] = useState('');
+  const [newCommentText, setNewCommentText] = useState("");
+  
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -25,10 +26,11 @@ export function Post({ author, content, publishedAt }) {
     event.preventDefault();
 
     setComments([...comments, newCommentText]);
+    setNewCommentText("");
+  }
 
-    setNewCommentText('');
-
-    console.log(newCommentText);
+  function HandleNewCommentChange() {
+    setNewCommentText(event.target.value);
   }
 
   return (
@@ -64,7 +66,14 @@ export function Post({ author, content, publishedAt }) {
       </div>
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="O que você achou do projeto?" />
+
+        <textarea
+          name="comment"
+          placeholder="O que você achou do projeto?"
+          value={newCommentText}
+          onChange={HandleNewCommentChange}
+        />
+
         <footer>
           <button type="submit">Comentar</button>
         </footer>
