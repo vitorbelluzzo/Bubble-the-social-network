@@ -6,7 +6,9 @@ import { Comment } from "./comment";
 import { useState } from "react";
 
 export function Post({ author, content, publishedAt }) {
-  const [comments, setComments] = useState([1]);
+  const [comments, setComments] = useState(["Post Muito bacana, parabéns!"]);
+
+  const [newCommentText, setNewCommentText] = useState('');
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -22,9 +24,11 @@ export function Post({ author, content, publishedAt }) {
   function handleCreateNewComment() {
     event.preventDefault();
 
-    setComments([...comments, comments.length + 1]);
+    setComments([...comments, newCommentText]);
 
-    console.log(comments);
+    setNewCommentText('');
+
+    console.log(newCommentText);
   }
 
   return (
@@ -48,10 +52,10 @@ export function Post({ author, content, publishedAt }) {
       <div className={styles.content}>
         {content.map((line) => {
           if (line.type === "paragraph") {
-            return <p>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p>
+              <p key={line.content}>
                 <a href="#">{line.content}</a>
               </p>
             );
@@ -68,7 +72,7 @@ export function Post({ author, content, publishedAt }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment />;
+          return <Comment key={comment} content={comment} />;
         })}
       </div>
     </article>
