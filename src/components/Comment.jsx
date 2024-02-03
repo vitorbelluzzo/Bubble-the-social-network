@@ -3,7 +3,8 @@ import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
 export function Comment({ content, deleteComment }) {
   function handleDeleteComment() {
-     deleteComment(content);
+ 
+    deleteComment(content);
   }
   return (
     <div className={styles.comment}>
