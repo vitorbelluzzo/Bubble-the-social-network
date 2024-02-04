@@ -26,7 +26,7 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function HandleNewCommentChange() {
-    event.target.setCustomValidity('');
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
@@ -35,9 +35,9 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function deleteComment(commentToDelete) {
-    const newCommentWithoutDeleteTheOlderOne = comments.filter(comment =>{
+    const newCommentWithoutDeleteTheOlderOne = comments.filter((comment) => {
       return comment !== commentToDelete;
-    })
+    });
     setComments(newCommentWithoutDeleteTheOlderOne);
   }
 
