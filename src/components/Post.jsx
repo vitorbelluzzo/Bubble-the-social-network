@@ -26,7 +26,12 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function HandleNewCommentChange() {
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
+  }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity("Seu comentário não pode ser vazio");
   }
 
   function deleteComment(commentToDelete) {
@@ -72,9 +77,11 @@ export function Post({ author, content, publishedAt }) {
 
         <textarea
           name="comment"
-          placeholder="O que você achou do projeto?"
+          placeholder="Deixe um comentário..."
           value={newCommentText}
           onChange={HandleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
